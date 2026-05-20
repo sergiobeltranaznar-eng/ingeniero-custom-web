@@ -540,6 +540,201 @@
   });
 })();
 </script>
+  <style>
+#ic-chat-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:9999;
+  border:none;
+  border-radius:999px;
+  background:#f6b51d;
+  color:#111;
+  padding:16px 20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+#ic-chat-panel{
+  position:fixed;
+  right:20px;
+  bottom:80px;
+  width:360px;
+  max-width:calc(100vw - 30px);
+  background:#111;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;
+  overflow:hidden;
+  display:none;
+  flex-direction:column;
+  z-index:9999;
+}
+
+#ic-chat-panel.open{
+  display:flex;
+}
+
+#ic-chat-messages{
+  padding:14px;
+  height:380px;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.ic-msg{
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.4;
+  font-size:14px;
+}
+
+.ic-user{
+  background:#f6b51d;
+  color:#111;
+  align-self:flex-end;
+}
+
+.ic-bot{
+  background:#222;
+  color:#fff;
+  align-self:flex-start;
+}
+
+#ic-chat-form{
+  display:flex;
+  padding:10px;
+  gap:8px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+#ic-chat-input{
+  flex:1;
+  background:#0b0b0b;
+  border:1px solid rgba(255,255,255,.1);
+  color:#fff;
+  padding:10px;
+  border-radius:12px;
+}
+
+#ic-chat-send{
+  border:none;
+  background:#f6b51d;
+  color:#111;
+  padding:0 14px;
+  border-radius:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+</style>
+
+<button id="ic-chat-button">
+Consulta rápida
+</button>
+
+<div id="ic-chat-panel">
+  <div style="padding:14px;border-bottom:1px solid rgba(255,255,255,.1);background:#171717;">
+    <strong>Ingeniero Custom</strong>
+  </div>
+
+  <div id="ic-chat-messages">
+    <div class="ic-msg ic-bot">
+      Cuéntame modelo, año y reforma que quieres hacer.
+    </div>
+  </div>
+
+  <form id="ic-chat-form">
+    <input id="ic-chat-input" placeholder="Ej: Sportster 2007 con apehanger..." />
+    <button id="ic-chat-send">
+      Enviar
+    </button>
+  </form>
+</div>
+
+<script>
+(() => {
+
+const FORM_URL = "https://forms.gle/ZpJv28ZYqySVSSKL9";
+
+const button = document.getElementById("ic-chat-button");
+const panel = document.getElementById("ic-chat-panel");
+const form = document.getElementById("ic-chat-form");
+const input = document.getElementById("ic-chat-input");
+const messages = document.getElementById("ic-chat-messages");
+
+let count = 0;
+
+button.addEventListener("click", () => {
+  panel.classList.toggle("open");
+});
+
+function addMessage(text, type){
+  const div = document.createElement("div");
+  div.className = "ic-msg " + type;
+  div.innerHTML = text.replace(/\n/g,"<br>");
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const text = input.value.trim();
+
+  if(!text) return;
+
+  addMessage(text, "ic-user");
+
+  input.value = "";
+
+  count++;
+
+  if(count >= 4){
+    addMessage(
+      'Para avanzar necesito fotos y datos técnicos.<br><br><a href="' + FORM_URL + '" target="_blank" style="color:#f6b51d;font-weight:900;">Abrir formulario</a>',
+      "ic-bot"
+    );
+    return;
+  }
+
+  addMessage("Revisando...", "ic-bot");
+
+  try {
+
+    const response = await fetch("/.netlify/functions/chat", {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+        message: text,
+        messageCount: count,
+        formUrl: FORM_URL
+      })
+    });
+
+    const data = await response.json();
+
+    messages.lastChild.remove();
+
+    addMessage(data.reply, "ic-bot");
+
+  } catch(err){
+
+    messages.lastChild.remove();
+
+    addMessage(
+      'Error técnico. Rellena el formulario:<br><br><a href="' + FORM_URL + '" target="_blank" style="color:#f6b51d;font-weight:900;">Abrir formulario</a>',
+      "ic-bot"
+    );
+
+  }
+
+});
+
+})();
+</script>
 
 </body>
 </html>
