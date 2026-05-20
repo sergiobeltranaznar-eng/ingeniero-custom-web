@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homologación de Motos Custom | Ingeniero Custom</title>
+  <meta name="keywords" content="homologación motos, homologar moto custom, reformas moto ITV, homologación Harley Davidson, ingeniero homologación vehículos" />
+  <meta name="description" content="Ingeniería especializada en homologación de motos custom. Revisión técnica, proceso claro y ayuda para pasar ITV sin sorpresas." />
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --bg-soft:#121212;
+      --card:#171717;
+      --line:rgba(255,255,255,.10);
+      --text:#f5f5f5;
+      --muted:#c4c4c4;
+      --accent:#f6b51d;
+      --accent-dark:#c58a00;
+      --max:1200px;
+      --radius:24px;
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.86)),
+        url('https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .section{padding:72px 0}
+    .section-tight{padding:56px 0}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+        url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .9fr;
+      gap:56px;
+      align-items:center;
+      min-height:720px;
+      padding:72px 0;
+    }
+    .pill{
+      display:inline-block;
+      padding:10px 16px;
+      border:1px solid rgba(246,181,29,.28);
+      background:rgba(246,181,29,.10);
+      color:#ffd66d;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+    h1{
+      font-size:68px;
+      line-height:.98;
+      margin:20px 0 0;
+      letter-spacing:-.04em;
+    }
+    .accent{color:var(--accent)}
+    .lead{
+      max-width:760px;
+      color:#e5e5e5;
+      font-size:20px;
+      line-height:1.7;
+      margin-top:24px;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      padding:0 26px;
+      border-radius:18px;
+      font-weight:800;
+      transition:.2s ease;
+      box-shadow:var(--shadow);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-primary:hover{background:#ffc53d}
+    .btn-secondary{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      box-shadow:none;
+    }
+    .badges{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:28px;
+      max-width:760px;
+    }
+    .badge,.card,.mini{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      backdrop-filter: blur(4px);
+      border-radius:18px;
+    }
+    .badge{
+      padding:14px 16px;
+      color:#efefef;
+      font-size:14px;
+    }
+    .sidebar-card{
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.48);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .eyebrow{
+      color:#ffd66d;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:12px;
+      font-weight:800;
+    }
+    .sidebar-card h2,.contact h2{font-size:38px;line-height:1.05;margin:12px 0 0}
+    .sidebar-card p{color:#d2d2d2;line-height:1.7}
+    .mini{padding:14px 16px;color:#efefef;margin-top:10px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+    .card{
+      background:rgba(17,17,17,.82);
+      padding:30px;
+      box-shadow:0 18px 40px rgba(0,0,0,.28);
+    }
+    .card h3{margin:0;font-size:30px;line-height:1.08}
+    .card p{margin:16px 0 0;color:#cfcfcf;line-height:1.75}
+    .services-wrap{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:rgba(9,9,9,.88);
+    }
+    .section-title{
+      font-size:48px;
+      line-height:1.05;
+      margin:10px 0 0;
+      letter-spacing:-.03em;
+    }
+    .section-copy{
+      max-width:760px;
+      margin-top:18px;
+      color:#cfcfcf;
+      font-size:19px;
+      line-height:1.75;
+    }
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+    .service{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(24,24,24,.95), rgba(14,14,14,.96));
+      border-radius:30px;
+      padding:30px;
+    }
+    .service h3{margin:0;font-size:31px;line-height:1.08}
+    .service p{margin:14px 0 0;color:#cfcfcf;line-height:1.75}
+    .process-step{
+      border:1px solid var(--line);
+      background:rgba(17,17,17,.86);
+      border-radius:26px;
+      padding:26px;
+      margin-top:16px;
+    }
+    .process-step h3{margin:0;color:#ffd66d;font-size:20px}
+    .process-step p{margin:10px 0 0;color:#cfcfcf;line-height:1.7}
+    .feature-panel{
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:34px;
+      background:linear-gradient(160deg, rgba(246,181,29,.10), rgba(18,18,18,.95) 45%, rgba(0,0,0,.95));
+      box-shadow:var(--shadow);
+    }
+    .feature-panel h3{font-size:42px;line-height:1.05;margin:0}
+    .feature-list{display:grid;gap:12px;margin-top:28px}
+    .feature-list .mini{margin:0;background:rgba(0,0,0,.28)}
+    .attention{
+      border-top:1px solid var(--line);
+      background:rgba(12,12,12,.92);
+      text-align:center;
+    }
+    .attention .section-copy,.testimonials .section-copy,.contact .section-copy{margin-left:auto;margin-right:auto}
+    .cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+    .testimonial-wrap{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(circle at top, rgba(246,181,29,.12), transparent 35%),
+        rgba(9,9,11,.94);
+    }
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+    .testimonial{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      border-radius:26px;
+      padding:30px;
+      color:#d6d6d6;
+      line-height:1.8;
+    }
+    .contact{text-align:center}
+    .form-box{
+      margin-top:34px;
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+    }
+    .form-inner{padding:40px 24px}
+    .muted{color:var(--muted)}
+    @media (max-width: 1100px){
+      h1{font-size:56px}
+      .hero-grid,.grid-2{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .grid-3,.testimonial-grid,.cta-grid{grid-template-columns:1fr}
+      .badges{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .service h3{font-size:22px}
+      .service{padding:20px}
+      .service-grid{gap:16px}
+      .feature-panel{padding:24px}
+      .section{padding:54px 0}
+      .section-tight{padding:42px 0}
+      .hero-grid{padding:54px 0;min-height:auto}
+      h1{font-size:42px}
+      .lead,.section-copy{font-size:17px}
+      .service-grid{grid-template-columns:1fr}
+      .section-title{font-size:34px}
+      .sidebar-card h2,.contact h2{font-size:30px}
+      .feature-panel h3{font-size:34px}
+      .btn{width:100%}
+      .cta-row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill">Ingeniería especializada en homologación de motos custom</div>
+        <h1>Homologación de motos custom para pasar ITV,<span class="accent" style="display:block;margin-top:8px;">sin errores ni sorpresas</span></h1>
+        <p class="lead">Legalizamos las modificaciones de tu moto con un enfoque técnico, claro y especializado. Menos dudas, menos errores y un proceso pensado para que disfrutes tu moto con total tranquilidad y sin sorpresas en ITV.</p>
+        <div class="cta-row">
+          <a class="btn btn-secondary" href="#servicios">Ver homologaciones</a>
+        </div>
+        <div class="badges">
+          <div class="badge">Ingeniero colegiado</div>
+          <div class="badge">Especialización en motos custom</div>
+          <div class="badge">Atención directa por WhatsApp</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="eyebrow">Revisión previa</div>
+        <h2>Cuéntanos qué quieres modificar</h2>
+        <p>Envíanos el modelo, el año, las piezas y unas fotos de la moto. Revisamos la reforma y te orientamos sobre la mejor forma de legalizarla.</p>
+        <div class="mini">1. Modelo y año de la moto</div>
+        <div class="mini">2. Modificaciones que quieres hacer</div>
+        <div class="mini">3. Fotos de la moto y de las piezas</div>
+        <div class="cta-row">
+          <a class="btn btn-secondary" href="https://wa.me/34687904200" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+          <a class="btn btn-secondary" href="tel:687904200">Contacta por teléfono</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container" style="text-align:center;">
+      <p style="color:#cfcfcf; font-size:16px; margin:0;">¿Quieres saber si tu moto pasará ITV sin problemas?</p>
+      <div class="cta-row" style="justify-content:center; margin-top:18px;">
+        <a class="btn btn-primary" href="https://forms.gle/ZpJv28ZYqySVSSKL9" target="_blank" rel="noopener noreferrer">Revisar mi moto ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container grid-3">
+      <div class="card">
+        <h3>Evita errores antes de gastar dinero</h3>
+        <p>Revisamos si la reforma es viable antes de que compres piezas o pases por taller.</p>
+      </div>
+      <div class="card">
+        <h3>Especialización real en custom</h3>
+        <p>No somos una gestoría genérica. Estamos enfocados en Harley-Davidson y motos custom.</p>
+      </div>
+      <div class="card">
+        <h3>Más claridad, menos vueltas</h3>
+        <p>Te explicamos qué conviene hacer, qué no compensa y cómo dejar la moto preparada para ITV.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="services-wrap section">
+    <div class="container">
+      <div class="eyebrow">Homologaciones habituales</div>
+      <h2 class="section-title">Homologación de reformas en motos custom</h2>
+      <p class="section-copy">Nos centramos en modificaciones habituales en motos custom para ofrecer un servicio ágil, técnico y orientado a resultado.</p>
+      <h3 style="margin-top:30px; color: var(--accent); border-bottom:2px solid var(--accent); padding-bottom:6px; display:block; text-align:center; width:fit-content; margin-left:auto; margin-right:auto;">Reformas básicas</h3>
+<div class="service-grid">
+  <div class="service"><h3>Faro halógeno a LED</h3><p>Revisión de compatibilidad, marcado y planteamiento correcto de la reforma.</p></div>
+  <div class="service"><h3>Recolocación de intermitentes</h3><p>Validamos posición, visibilidad y enfoque técnico para evitar problemas en ITV.</p></div>
+  <div class="service"><h3>Recolocación de matrícula</h3><p>Importan la posición, la visibilidad y cómo se ejecuta el conjunto.</p></div>
+  <div class="service"><h3>Instalación de sissy bar</h3><p>Revisamos fijación y encaje correcto dentro del proyecto de reforma.</p></div>
+  <div class="service"><h3>Cambio de escape</h3><p>Analizamos homologación del componente y planteamiento global del montaje.</p></div>
+  <div class="service"><h3>Cambio de manillar</h3><p>Una de las reformas estrella en custom por impacto estético y de conducción.</p></div>
+</div>
+
+<h3 style="margin-top:50px; color: var(--accent); border-bottom:2px solid var(--accent); padding-bottom:6px; display:block; text-align:center; width:fit-content; margin-left:auto; margin-right:auto;">Reformas avanzadas</h3>
+<div class="service-grid">
+  <div class="service"><h3>Cambio de amortiguadores</h3><p>Una modificación habitual que puede afectar la geometría de la moto.</p></div>
+  <div class="service"><h3>Asiento y configuración de plazas</h3><p>Adaptamos la moto a monoplaza o biplaza, o revisamos cambios relevantes en el anclaje y la estructura del asiento.</p></div>
+  <div class="service"><h3>Velocímetro y cuadro de mandos</h3><p>Sustituimos el conjunto original por opciones digitales o minimalistas, asegurando encaje normativo y documentación correcta.</p></div>
+  <div class="service"><h3>Mejora del sistema de frenos</h3><p>Evaluamos cambios en pinzas, bombas o discos cuando se montan componentes con distinta medida o prestaciones.</p></div>
+  <div class="service"><h3>Modificación de horquillas o tijas</h3><p>Revisamos alteraciones en la geometría delantera o en el sistema de suspensión para plantear bien la reforma.</p></div>
+  <div class="service"><h3>Llantas y neumáticos no equivalentes</h3><p>Estudiamos cambios de diseño, diámetro o medidas fuera de equivalencia respecto a la homologación de origen.</p></div>
+</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <div class="eyebrow">Proceso de trabajo</div>
+        <h2 class="section-title">Proceso de homologación de motos paso a paso</h2>
+        <div class="process-step"><h3>1. Nos envías la información</h3><p>Modelo, año, fotos y las modificaciones que quieres hacer.</p></div>
+        <div class="process-step"><h3>2. Revisamos la viabilidad</h3><p>Analizamos si la reforma está bien planteada y qué necesita realmente.</p></div>
+        <div class="process-step"><h3>3. Te damos una propuesta clara</h3><p>Sin lenguaje confuso ni respuestas genéricas.</p></div>
+        <div class="process-step"><h3>4. Nos ocupamos de todo hasta tu ITV favorable</h3><p>Tú solo piensa en disfrutar de tu moto, para lo demás estamos nosotros.</p></div>
+      </div>
+
+      <div class="feature-panel" style="text-align:center;">
+        <div class="eyebrow" style="text-align:center;">Ingeniero Custom</div>
+        <h2 style="text-align:center;">Cuéntanos tu proyecto</h2>
+        <p class="section-copy" style="margin-top:18px;max-width:none;">Rellena el formulario y revisaremos tu caso para indicarte la mejor forma de homologar tu moto sin problemas en ITV.</p>
+        <div class="form-box" style="margin-top:24px;">
+          <div class="form-inner">
+            <p class="muted">Haz clic abajo para rellenar el formulario:</p>
+            <div class="cta-row" style="justify-content:center;">
+              <a class="btn btn-primary" href="https://forms.gle/ZpJv28ZYqySVSSKL9" target="_blank" rel="noopener noreferrer">Abrir formulario</a>
+            </div>
+          </div>
+        </div>
+        <div class="cta-row" style="justify-content:center;margin-top:20px;">
+          <a class="btn btn-primary" href="https://wa.me/34687904200" target="_blank" rel="noopener noreferrer">O hablar por WhatsApp</a>
+        </div>
+        <p class="muted" style="margin-top:14px; text-align:center;">También puedes escribirnos a: <strong><a href="mailto:info@ingenierocustom.es" style="color:inherit; font-weight:700;">info@ingenierocustom.es</a></p>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="attention section-tight">
+    <div class="container">
+      <h2 class="section-title">Antes de modificar tu moto: evita problemas en ITV</h2>
+      <p class="section-copy">La mayoría de problemas en ITV vienen de hacer modificaciones sin saber si son homologables. Evita gastar dinero dos veces. Además, prácticas habituales como montar piezas de origen solo para pasar la ITV y volver después a las reformas sin legalizar pueden suponer sanciones, problemas legales y hasta la pérdida de cobertura del seguro en caso de accidente.</p>
+      <p class="section-copy" style="margin-top:12px;">Conduce tu moto con la seguridad de que estás cubierto en todo momento.</p>
+      <div class="cta-grid">
+        <div class="card"><p>Evita montar piezas que luego no se pueden legalizar</p></div>
+        <div class="card"><p>Asegura que la modificación está bien planteada desde el inicio</p></div>
+        <div class="card"><p>Ahorra tiempo, dinero y segundas revisiones en ITV</p></div>
+      </div>
+      <div class="cta-row" style="justify-content:center;">
+        <a class="btn btn-primary" href="https://forms.gle/ZpJv28ZYqySVSSKL9" target="_blank" rel="noopener noreferrer">Consultar mi caso antes de modificar</a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2 class="section-title">Preguntas frecuentes sobre homologación de motos</h2>
+
+      <div class="process-step"><h3>¿Qué tipo de reformas requieren homologación?</h3><p>Cualquier modificación que altere las características originales del vehículo: suspensión, frenos, iluminación, carrocería o elementos estructurales.</p></div>
+
+      <div class="process-step"><h3>¿Por qué es necesario legalizar las reformas?</h3><p>Porque lo exige la normativa, concretamente el Real Decreto 866/2010 y el Manual de Reformas de Vehículos. Circular con reformas sin legalizar puede suponer ITV desfavorable, sanciones y problemas con el seguro.</p></div>
+
+      <div class="process-step"><h3>¿Cuánto cuesta homologar una moto?</h3><p>Depende de la reforma. Para darte un presupuesto necesitamos fotos, ficha técnica y descripción de las modificaciones.</p></div>
+
+      <div class="process-step"><h3>¿Qué información necesito enviar?</h3><p>Modelo y año de la moto, modificaciones que quieres hacer y fotografías. Cada caso se revisa de forma individual.</p></div>
+
+      <div class="process-step"><h3>¿Cuánto tarda el proceso de homologación?</h3><p>Depende de la complejidad, estos tiempos son orientativos:<br><br>
+      - Reformas simples → 1 semana<br>
+      - Proyecto técnico → entre 2 y 3 semanas<br>
+      - Ensayos o casos especiales → a estudiar</p></div>
+
+      <div class="process-step"><h3>¿Qué tengo que hacer después de la ITV?</h3><p>Una vez superada la ITV, la reforma queda anotada en la ficha técnica. Es recomendable comunicarlo a tu compañía de seguros enviando la nueva ficha técnica para que conste correctamente.</p></div>
+
+      <div class="process-step"><h3>¿Se actualiza el permiso de circulación?</h3><p>En la mayoría de casos no es necesario. Solo en situaciones específicas como cambios de clasificación o uso del vehículo.</p></div>
+
+      <div class="process-step"><h3>¿Podéis gestionar trámites en Tráfico?</h3><p>Sí, si es necesario podemos hacerlo en tu nombre con una autorización firmada.</p></div>
+
+      <div class="process-step"><h3>¿Puedo montar piezas solo para pasar ITV?</h3><p>No es recomendable. Circular con modificaciones no legalizadas puede implicar sanciones y pérdida de cobertura del seguro.</p></div>
+
+    </div>
+  </section>
+
+
+<!-- Widget flotante: Agente Ingeniero Custom -->
+<style>
+  #ic-chat-button{
+    position:fixed; right:22px; bottom:22px; z-index:9999;
+    border:0; border-radius:999px; padding:16px 20px;
+    background:#f6b51d; color:#111; font-weight:900;
+    box-shadow:0 18px 40px rgba(0,0,0,.45); cursor:pointer;
+  }
+  #ic-chat-panel{
+    position:fixed; right:22px; bottom:86px; z-index:9999;
+    width:min(380px, calc(100vw - 28px)); max-height:70vh;
+    background:#111; color:#f5f5f5; border:1px solid rgba(255,255,255,.14);
+    border-radius:22px; box-shadow:0 24px 60px rgba(0,0,0,.55);
+    display:none; overflow:hidden;
+  }
+  #ic-chat-panel.open{display:flex; flex-direction:column;}
+  .ic-chat-head{padding:16px 18px; background:#171717; border-bottom:1px solid rgba(255,255,255,.10);}
+  .ic-chat-head strong{display:block;}
+  .ic-chat-head span{display:block; color:#c4c4c4; font-size:13px; margin-top:3px;}
+  #ic-chat-messages{padding:14px; overflow:auto; display:flex; flex-direction:column; gap:10px;}
+  .ic-msg{padding:11px 13px; border-radius:14px; line-height:1.45; font-size:14px;}
+  .ic-user{align-self:flex-end; background:#f6b51d; color:#111; max-width:84%;}
+  .ic-bot{align-self:flex-start; background:#222; color:#f5f5f5; max-width:88%;}
+  .ic-chat-form{display:flex; gap:8px; padding:12px; border-top:1px solid rgba(255,255,255,.10);}
+  #ic-chat-input{flex:1; border-radius:14px; border:1px solid rgba(255,255,255,.16); background:#0b0b0b; color:#fff; padding:12px;}
+  #ic-chat-send{border:0; border-radius:14px; background:#f6b51d; color:#111; font-weight:900; padding:0 14px; cursor:pointer;}
+</style>
+
+<button id="ic-chat-button" type="button">Consulta rápida</button>
+
+<div id="ic-chat-panel" aria-live="polite">
+  <div class="ic-chat-head">
+    <strong>Ingeniero Custom</strong>
+    <span>Orientación inicial. Para valorar el proyecto, te derivaré al formulario.</span>
+  </div>
+  <div id="ic-chat-messages">
+    <div class="ic-msg ic-bot">Cuéntame marca, modelo, año y qué reforma quieres hacer. Te diré si pinta viable y qué datos faltan.</div>
+  </div>
+  <form class="ic-chat-form" id="ic-chat-form">
+    <input id="ic-chat-input" autocomplete="off" placeholder="Ej: Harley Sportster 2010, manillar y escape..." />
+    <button id="ic-chat-send" type="submit">Enviar</button>
+  </form>
+</div>
+
+<script>
+(() => {
+  const https://forms.gle/ZpJv28ZYqySVSSKL9 = "https://forms.gle/ZpJv28ZYqySVSSKL9";
+  const MAX_TECHNICAL_MESSAGES = 4;
+
+  const button = document.getElementById("ic-chat-button");
+  const panel = document.getElementById("ic-chat-panel");
+  const form = document.getElementById("ic-chat-form");
+  const input = document.getElementById("ic-chat-input");
+  const messages = document.getElementById("ic-chat-messages");
+
+  const state = JSON.parse(localStorage.getItem("icChatState") || '{"count":0,"locked":false,"history":[]}');
+
+  function save(){ localStorage.setItem("icChatState", JSON.stringify(state)); }
+
+  function addMsg(text, who){
+    const div = document.createElement("div");
+    div.className = "ic-msg " + (who === "user" ? "ic-user" : "ic-bot");
+    div.innerHTML = text.replace(/\n/g, "<br>");
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function lockMessage(){
+    state.locked = true; save();
+    return `Para avanzar con rigor necesito fotos, ficha técnica y datos completos. Rellena este formulario y seguimos desde ahí:<br><br><a href="${https://forms.gle/ZpJv28ZYqySVSSKL9}" target="_blank" rel="noopener noreferrer" style="color:#f6b51d;font-weight:900;">Abrir formulario</a>`;
+  }
+
+  button.addEventListener("click", () => panel.classList.toggle("open"));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if(!text) return;
+    input.value = "";
+    addMsg(text, "user");
+
+    if(state.locked || state.count >= MAX_TECHNICAL_MESSAGES){
+      addMsg(lockMessage(), "bot");
+      return;
+    }
+
+    state.count += 1;
+    state.history.push({role:"user", content:text});
+    save();
+
+    addMsg("Revisando...", "bot");
+    const loading = messages.lastChild;
+
+    try {
+      const res = await fetch("/.netlify/functions/chat", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({
+          message: text,
+          history: state.history.slice(-8),
+          messageCount: state.count,
+          formUrl: https://forms.gle/ZpJv28ZYqySVSSKL9
+        })
+      });
+
+      const data = await res.json();
+      loading.remove();
+
+      if(data.locked){
+        state.locked = true;
+        save();
+      }
+
+      const reply = data.reply || lockMessage();
+      addMsg(reply, "bot");
+      state.history.push({role:"assistant", content:reply});
+      save();
+    } catch(err) {
+      loading.remove();
+      addMsg("Ha habido un error técnico. Para avanzar, rellena el formulario: <br><br><a href='" + https://forms.gle/ZpJv28ZYqySVSSKL9 + "' target='_blank' style='color:#f6b51d;font-weight:900;'>Abrir formulario</a>", "bot");
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
