@@ -462,7 +462,7 @@
 
 <script>
 (() => {
-  const https://forms.gle/ZpJv28ZYqySVSSKL9 = "https://forms.gle/ZpJv28ZYqySVSSKL9";
+  const FORM_URL = "https://forms.gle/ZpJv28ZYqySVSSKL9";
   const MAX_TECHNICAL_MESSAGES = 4;
 
   const button = document.getElementById("ic-chat-button");
@@ -485,7 +485,7 @@
 
   function lockMessage(){
     state.locked = true; save();
-    return `Para avanzar con rigor necesito fotos, ficha técnica y datos completos. Rellena este formulario y seguimos desde ahí:<br><br><a href="${https://forms.gle/ZpJv28ZYqySVSSKL9}" target="_blank" rel="noopener noreferrer" style="color:#f6b51d;font-weight:900;">Abrir formulario</a>`;
+    return `Para avanzar con rigor necesito fotos, ficha técnica y datos completos. Rellena este formulario y seguimos desde ahí:<br><br><a href="${FORM_URL}" target="_blank" rel="noopener noreferrer" style="color:#f6b51d;font-weight:900;">Abrir formulario</a>`;
   }
 
   button.addEventListener("click", () => panel.classList.toggle("open"));
@@ -517,7 +517,7 @@
           message: text,
           history: state.history.slice(-8),
           messageCount: state.count,
-          formUrl: https://forms.gle/ZpJv28ZYqySVSSKL9
+          formUrl: FORM_URL
         })
       });
 
@@ -535,7 +535,7 @@
       save();
     } catch(err) {
       loading.remove();
-      addMsg("Ha habido un error técnico. Para avanzar, rellena el formulario: <br><br><a href='" + https://forms.gle/ZpJv28ZYqySVSSKL9 + "' target='_blank' style='color:#f6b51d;font-weight:900;'>Abrir formulario</a>", "bot");
+      addMsg("Ha habido un error técnico. Para avanzar, rellena el formulario: <br><br><a href='" + FORM_URL + "' target='_blank' style='color:#f6b51d;font-weight:900;'>Abrir formulario</a>", "bot");
     }
   });
 })();
